@@ -45,7 +45,7 @@ export const siteSettings = {
         icon: 'ShopIcon',
       },
       {
-        href: "/",
+        href: "/catalog",
         label: 'Catalog',
         icon: 'ProductsIcon',
         children: [
@@ -87,7 +87,7 @@ export const siteSettings = {
           icon: 'DashboardIcon',
       },
       {
-        href: "/",
+        href: "/sales",
         label: 'Sales',
         icon: 'ProductsIcon',
         children: [
@@ -120,7 +120,7 @@ export const siteSettings = {
         children: [],
       },
       {
-        href: "/",
+        href: "/settings",
         label: 'Settings',
         icon: 'SettingsIcon',
         children: [
