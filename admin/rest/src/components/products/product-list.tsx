@@ -12,7 +12,7 @@ import { Routes } from '@/config/routes';
 import { Config } from '@/config';
 import Link from '@/components/ui/link';
 import LanguageSwitcher from '@/components/ui/lang-action/action';
-
+import Badge from '@/components/ui/badge/badge';
 import {GetBrandList} from "../../services/Service"
 
 export type IProps = {
@@ -57,14 +57,7 @@ const ProductList = ({ listOfBrands, onSort, onOrder }: IProps) => {
 
   const columns = [
     {
-      title: t('table:table-item-id'),
-      dataIndex: 'id',
-      key: 'id',
-      align: 'center',
-      width: 60,
-    },
-    {
-      title: t('table:table-item-image'),
+      title: "Image",
       dataIndex: 'image',
       key: 'image',
       align: alignLeft,
@@ -81,21 +74,86 @@ const ProductList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       ),
     },
     {
-      title: (
-        <TitleWithSort
-          title={t('table:table-item-title')}
-          ascending={
-            sortingObj.sort === SortOrder.Asc && sortingObj.column === 'name'
-          }
-          isActive={sortingObj.column === 'name'}
-        />
-      ),
+      title: "Products",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
       align: alignLeft,
+      width: 200,
       onHeaderCell: () => onHeaderClick('name'),
       render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Brand",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      width: 100,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Category",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      width: 130,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Stock Code (SKU)",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      width: 100,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Price",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      width: 100,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">$2.00</span>,
+    },
+    {
+      title: t('table:table-item-status'),
+      dataIndex: 'name',
+      key: 'status',
+      align: 'left',
+      width: 180,
+      render: (status: string, record: any) => (
+        <div
+          className={`flex justify-start ${
+            record?.quantity > 0 && record?.quantity < 10
+              ? 'flex-col items-baseline space-y-3 3xl:flex-row 3xl:space-x-3 3xl:space-y-0 rtl:3xl:space-x-reverse'
+              : 'items-center space-x-3 rtl:space-x-reverse'
+          }`}
+        >
+          <Badge
+            text="Active"
+            color={
+              status.toLocaleLowerCase() === 'draft'
+                ? 'bg-yellow-400'
+                : 'bg-accent'
+            }
+          />
+          {record?.quantity > 0 && record?.quantity < 10 && (
+            <Badge
+              text={t('common:text-low-quantity')}
+              color="bg-red-600"
+              animate={true}
+            />
+          )}
+        </div>
+      ),
     },
     {
       title: t('table:table-item-actions'),

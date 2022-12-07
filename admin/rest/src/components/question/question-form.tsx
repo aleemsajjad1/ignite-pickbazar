@@ -119,7 +119,7 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
         )}
 
         <Button>
-          {initialValues ? t('form:button-label-update-group') : t('Add Questions')}
+          {initialValues ? t('form:button-label-update-group') : t('Add Quotations')}
         </Button>
       </div>
     </form>

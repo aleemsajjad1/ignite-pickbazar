@@ -88,7 +88,7 @@ const SelectCustomer = dynamic(
 );
 
 const AuthorDeleteView = dynamic(
-  () => import('@/components/author/author-delete-view')
+  () => import('@/components/variant/author-delete-view')
 );
 const ManufacturerDeleteView = dynamic(
   () => import('@/components/manufacturer/manufacturer-delete-view')

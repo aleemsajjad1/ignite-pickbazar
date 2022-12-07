@@ -58,61 +58,63 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
 
   const columns = [
     {
-      title: t('table:table-item-id'),
-      dataIndex: 'id',
-      key: 'id',
-      align: 'center',
-      width: 60,
-    },
-    {
-      title: t('table:table-item-image'),
-      dataIndex: 'image',
-      key: 'image',
-      align: alignLeft,
-      width: 74,
-      render: (image: any, { name }: { name: string }) => (
-        <Image
-          src="http://localhost:3002/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2Fconversions%2FApples-thumbnail.jpg&w=48&q=75"
-          alt={name}
-          layout="fixed"
-          width={42}
-          height={42}
-          className="overflow-hidden rounded"
-        />
-      ),
-    },
-    {
-      title: (
-        <TitleWithSort
-          title={t('table:table-item-title')}
-          ascending={
-            sortingObj.sort === SortOrder.Asc && sortingObj.column === 'name'
-          }
-          isActive={sortingObj.column === 'name'}
-        />
-      ),
+      title: "Date",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
-      align: alignLeft,
-      onHeaderCell: () => onHeaderClick('name'),
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
+    },
+    {
+      title: "Credit Note No.",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">12</span>,
+    },
+    {
+      title: "Parent Sale",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">$122</span>,
+    },
+    {
+      title: "Customer Name",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
       render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
     },
-    // {
-    //   title: t('table:table-item-actions'),
-    //   dataIndex: 'slug',
-    //   key: 'actions',
-    //   align: alignRight,
-    //   render: (slug: string, record: Type) => (
-    //     <LanguageSwitcher
-    //       slug={slug}
-    //       record={record}
-    //       deleteModalView="DELETE_TYPE"
-    //       routes={Routes?.draft}
-    //     />
-    //   ),
-    // },
+    {
+      title: "Location",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">Pakistan</span>,
+    },
+    {
+      title: "Total Amount",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">$1200</span>,
+    },
+    {
+      title: "Payment Due",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">$100</span>,
+    },
   ];
+
 
   return (
     <div className="mb-8 overflow-hidden rounded shadow">

@@ -42,7 +42,7 @@ export default function TypesPage() {
       <Card className="mb-8 flex flex-col items-center xl:flex-row">
         <div className="mb-4 md:w-1/4 xl:mb-0">
           <h1 className="text-xl font-semibold text-heading">
-          {t('common:sidebar-nav-item-questions')}
+          {t('Quotations')}
           </h1>
         </div>
 
@@ -55,7 +55,7 @@ export default function TypesPage() {
               className="h-12 w-full md:w-auto md:ms-6"
             >
               <span className="block md:hidden xl:block">
-                + {t('Add Questions')}
+                + {t('Add Quotations')}
               </span>
               <span className="hidden md:block xl:hidden">
                 + {t('form:button-label-add')}

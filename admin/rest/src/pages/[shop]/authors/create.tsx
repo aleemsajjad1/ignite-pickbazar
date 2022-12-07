@@ -1,4 +1,4 @@
-import AuthorCreateOrUpdateForm from '@/components/author/author-form';
+import AuthorCreateOrUpdateForm from '@/components/variant/author-form';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ShopLayout from '@/components/layouts/shop';

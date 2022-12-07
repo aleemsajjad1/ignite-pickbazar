@@ -12,7 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { adminOnly } from '@/utils/auth-utils';
 import { Routes } from '@/config/routes';
 import { GetStaticProps } from 'next';
-import AuthorList from '@/components/author/author-list';
+import AuthorList from '@/components/variant/author-list';
 import { useAuthorsQuery } from '@/data/author';
 import { SortOrder } from '@/types';
 import { Config } from '@/config';

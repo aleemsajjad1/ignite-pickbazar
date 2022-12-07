@@ -1,6 +1,5 @@
-
 import { Table } from '@/components/ui/table';
-import { SortOrder, Type ,BrandList} from '@/types';
+import { SortOrder, Type, BrandList } from '@/types';
 import { getIcon } from '@/utils/get-icon';
 import Image from 'next/image';
 import * as typeIcons from '@/components/icons/type';
@@ -13,7 +12,7 @@ import { Config } from '@/config';
 import Link from '@/components/ui/link';
 import LanguageSwitcher from '@/components/ui/lang-action/action';
 
-import {GetBrandList} from "../../services/Service"
+import { GetBrandList } from '../../services/Service';
 
 export type IProps = {
   listOfBrands: BrandList[] | undefined;
@@ -22,13 +21,13 @@ export type IProps = {
 };
 
 const ProductList = ({ listOfBrands, onSort, onOrder }: IProps) => {
-  const [brandList, setBrandList] = useState()
-  useEffect(()=>{
-    GetBrandList().then( (result) => {
+  const [brandList, setBrandList] = useState();
+  useEffect(() => {
+    GetBrandList().then((result) => {
       setBrandList(result.data);
-    })
-  },[])
-  
+    });
+  }, []);
+
   const { t } = useTranslation();
   const { alignLeft, alignRight } = useIsRTL();
 
@@ -57,44 +56,76 @@ const ProductList = ({ listOfBrands, onSort, onOrder }: IProps) => {
 
   const columns = [
     {
-      title: t('table:table-item-id'),
-      dataIndex: 'id',
-      key: 'id',
-      align: 'center',
-      width: 60,
-    },
-    {
-      title: t('table:table-item-image'),
-      dataIndex: 'image',
-      key: 'image',
-      align: alignLeft,
-      width: 74,
-      render: (image: any, { name }: { name: string }) => (
-        <Image
-          src="http://localhost:3002/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2Fconversions%2FApples-thumbnail.jpg&w=48&q=75"
-          alt={name}
-          layout="fixed"
-          width={42}
-          height={42}
-          className="overflow-hidden rounded"
-        />
-      ),
-    },
-    {
-      title: (
-        <TitleWithSort
-          title={t('table:table-item-title')}
-          ascending={
-            sortingObj.sort === SortOrder.Asc && sortingObj.column === 'name'
-          }
-          isActive={sortingObj.column === 'name'}
-        />
-      ),
+      title: 'Date',
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
-      align: alignLeft,
-      onHeaderCell: () => onHeaderClick('name'),
+      align: 'center',
+      width: 150,
+      render: (name: any) => (
+        <span className="whitespace-nowrap">12/12/2022</span>
+      ),
+    },
+    {
+      title: 'Reference No.',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
+      render: (name: any) => <span className="whitespace-nowrap">12</span>,
+    },
+    {
+      title: 'Customer Name',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: 'Customer Contact',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
+      render: (name: any) => (
+        <span className="whitespace-nowrap">03xxxxxxxxxx</span>
+      ),
+    },
+    {
+      title: 'Location',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
+      render: (name: any) => <span className="whitespace-nowrap">Lahore</span>,
+    },
+    {
+      title: 'Total Items',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
+      render: (name: any) => <span className="whitespace-nowrap">5 items</span>,
+    },
+    {
+      title: 'Added By',
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+
+      width: 150,
       render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
     },
     {

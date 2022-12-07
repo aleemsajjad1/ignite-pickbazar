@@ -9,6 +9,7 @@ export const Routes = {
   profile: '/profile',
   verifyCoupons: '/coupons/verify',
   settings: '/settings',
+  businessettings:'/businessSettings',
   storeSettings: '/vendor/settings',
   storeKeepers: '/vendor/store_keepers',
   profileUpdate: '/profile-update',
@@ -58,6 +59,9 @@ export const Routes = {
   },
   author: {
     ...routesFactory('authors'),
+  },
+  variant: {
+    ...routesFactory('variant'),
   },
   coupon: {
     ...routesFactory('/coupons'),

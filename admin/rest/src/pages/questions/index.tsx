@@ -55,7 +55,7 @@ export default function TypesPage() {
               className="h-12 w-full md:w-auto md:ms-6"
             >
               <span className="block md:hidden xl:block">
-                + {t('Add Questions')}
+                + {t('Add Quotations')}
               </span>
               <span className="hidden md:block xl:hidden">
                 + {t('form:button-label-add')}

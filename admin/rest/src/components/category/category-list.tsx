@@ -15,6 +15,7 @@ import Link from '@/components/ui/link';
 import LanguageSwitcher from '@/components/ui/lang-action/action';
 
 import {GetBrandList} from "../../services/Service"
+import Badge from '../ui/badge/badge';
 
 export type IProps = {
   listOfBrands: BrandList[] | undefined;
@@ -58,13 +59,6 @@ const CatagoryList = ({ listOfBrands, onSort, onOrder }: IProps) => {
 
   const columns = [
     {
-      title: t('table:table-item-id'),
-      dataIndex: 'id',
-      key: 'id',
-      align: 'center',
-      width: 60,
-    },
-    {
       title: t('table:table-item-image'),
       dataIndex: 'image',
       key: 'image',
@@ -82,22 +76,59 @@ const CatagoryList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       ),
     },
     {
-      title: (
-        <TitleWithSort
-          title={t('table:table-item-title')}
-          ascending={
-            sortingObj.sort === SortOrder.Asc && sortingObj.column === 'name'
-          }
-          isActive={sortingObj.column === 'name'}
-        />
-      ),
+      title: "Category",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
+      width: 200,
       align: alignLeft,
       onHeaderCell: () => onHeaderClick('name'),
       render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
     },
+    {
+      title: "Sub Category Total",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      width: 100,
+      align: alignRight,
+
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">$10</span>,
+    },
+    // {
+    //   title: t('table:table-item-status'),
+    //   dataIndex: 'name',
+    //   key: 'status',
+    //   align: 'left',
+    //   width: 180,
+      
+    //   render: (status: string, record: any) => (
+    //     <div
+    //       className={`flex justify-start ${
+    //         record?.quantity > 0 && record?.quantity < 10
+    //           ? 'flex-col items-baseline space-y-3 3xl:flex-row 3xl:space-x-3 3xl:space-y-0 rtl:3xl:space-x-reverse'
+    //           : 'items-center space-x-3 rtl:space-x-reverse'
+    //       }`}
+    //     >
+    //       <Badge
+    //         text="Active"
+    //         color={
+    //           status.toLocaleLowerCase() === 'draft'
+    //             ? 'bg-yellow-400'
+    //             : 'bg-accent'
+    //         }
+    //       />
+    //       {record?.quantity > 0 && record?.quantity < 10 && (
+    //         <Badge
+    //           text={t('common:text-low-quantity')}
+    //           color="bg-red-600"
+    //           animate={true}
+    //         />
+    //       )}
+    //     </div>
+    //   ),
+    // },
     {
       title: t('table:table-item-actions'),
       dataIndex: 'slug',

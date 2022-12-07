@@ -21,3 +21,15 @@ export { FountainPenIcon } from '@/components/icons/sidebar/fountain-pen';
 export { CalendarScheduleIcon } from '@/components/icons/sidebar/calendar-schedule';
 export { ReviewIcon } from '@/components/icons/sidebar/review';
 export { QuestionIcon } from '@/components/icons/sidebar/question';
+export {CustomerIcons} from "@/components/icons/sidebar/customerIcons"
+export {CatalogIcons} from '@/components/icons/sidebar/catalogIcons'
+export {BrandIcons} from '@/components/icons/sidebar/brandIcons'
+export { UnitIcons} from '@/components/icons/sidebar/unitIcons'
+export {ImportProductsIcons} from '@/components/icons/sidebar/importProducts'
+export {StatisticIcons} from '@/components/icons/sidebar/statistic'
+export {SalesIcons} from '@/components/icons/sidebar/sales'
+export {InvoiceIcon} from '@/components/icons/sidebar/invoiceIcon'
+export {DraftIcons} from '@/components/icons/sidebar/draftIcons'
+export {BusinesSettingIcon} from '@/components/icons/sidebar/businessetting'
+export {DashboardIcons} from '@/components/icons/sidebar/dashboardIcons'
+

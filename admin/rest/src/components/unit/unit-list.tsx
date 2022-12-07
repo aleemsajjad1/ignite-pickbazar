@@ -56,46 +56,56 @@ const UnitList = ({ listOfBrands, onSort, onOrder }: IProps) => {
   });
 
   const columns = [
+    // {
+    //   title: t('table:table-item-id'),
+    //   dataIndex: 'id',
+    //   key: 'id',
+    //   align: 'center',
+    //   width: 60,
+    // },
+    // {
+    //   title: t('table:table-item-image'),
+    //   dataIndex: 'image',
+    //   key: 'image',
+    //   align: alignLeft,
+    //   width: 74,
+    //   render: (image: any, { name }: { name: string }) => (
+    //     <Image
+    //       src="http://localhost:3002/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2Fconversions%2FApples-thumbnail.jpg&w=48&q=75"
+    //       alt={name}
+    //       layout="fixed"
+    //       width={42}
+    //       height={42}
+    //       className="overflow-hidden rounded"
+    //     />
+    //   ),
+    // },
     {
-      title: t('table:table-item-id'),
-      dataIndex: 'id',
-      key: 'id',
-      align: 'center',
-      width: 60,
-    },
-    {
-      title: t('table:table-item-image'),
-      dataIndex: 'image',
-      key: 'image',
-      align: alignLeft,
-      width: 74,
-      render: (image: any, { name }: { name: string }) => (
-        <Image
-          src="http://localhost:3002/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F1%2Fconversions%2FApples-thumbnail.jpg&w=48&q=75"
-          alt={name}
-          layout="fixed"
-          width={42}
-          height={42}
-          className="overflow-hidden rounded"
-        />
-      ),
-    },
-    {
-      title: (
-        <TitleWithSort
-          title={t('table:table-item-title')}
-          ascending={
-            sortingObj.sort === SortOrder.Asc && sortingObj.column === 'name'
-          }
-          isActive={sortingObj.column === 'name'}
-        />
-      ),
+      title:"Units",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
       align: alignLeft,
       onHeaderCell: () => onHeaderClick('name'),
       render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Short Name",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
+    },
+    {
+      title: "Allow Decimal",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">Yes</span>,
     },
     {
       title: t('table:table-item-actions'),

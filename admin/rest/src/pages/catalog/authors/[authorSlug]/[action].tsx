@@ -1,5 +1,5 @@
 import Layout from '@/components/layouts/admin';
-import AuthorCreateOrUpdateForm from '@/components/author/author-form';
+import AuthorCreateOrUpdateForm from '@/components/variant/author-form';
 import ErrorMessage from '@/components/ui/error-message';
 import Loader from '@/components/ui/loader/loader';
 import { useRouter } from 'next/router';

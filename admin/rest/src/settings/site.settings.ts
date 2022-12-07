@@ -37,45 +37,45 @@ export const siteSettings = {
       {
         href: Routes.dashboard,
         label: 'Dashboard',
-        icon: 'DashboardIcon',
+        icon: 'DashboardIcons',
       },
       {
         href: Routes.customer.list,
         label: 'Customers',
-        icon: 'ShopIcon',
+        icon: 'CustomerIcons',
       },
       {
         href: "/catalog",
         label: 'Catalog',
-        icon: 'ProductsIcon',
+        icon: 'CatalogIcons',
         children: [
           {
             href: Routes.product.list,
             label: 'Products',
-            icon: 'ReviewIcon',
+            icon: 'TypesIcon',
           },
           {
             href: Routes.category.list,
             label: 'Categories',
-            icon: 'CategoriesIcon',
+            icon: 'TagIcon',
           },
           {
             href: Routes.brands.list,
             label: 'Brands',
-            icon: 'TypesIcon',
+            icon: 'BrandIcons',
           },
           {
             href: Routes.unit.list,
             label: 'Unit',
-            icon: 'TagIcon',
+            icon: 'UnitIcons',
           },
           {
             href: Routes.importProduct.list,
             label: 'Import Product',
-            icon: 'DiaryIcon',
+            icon: 'ImportProductsIcons',
           },
           {
-            href: Routes.author.list,
+            href: Routes.variant.list,
             label: 'Variation/Adons',
             icon: 'FountainPenIcon',
           },
@@ -84,26 +84,26 @@ export const siteSettings = {
       {
           href: Routes.dashboard,
           label: 'Statistic',
-          icon: 'DashboardIcon',
+          icon: 'StatisticIcons',
       },
       {
         href: "/sales",
         label: 'Sales',
-        icon: 'ProductsIcon',
+        icon: 'SalesIcons',
         children: [
           {
             href: Routes.invoice.list,
             label: 'Invoices',
-            icon: 'OrdersIcon',
+            icon: 'InvoiceIcon',
           },
           {
             href: Routes.draft.list,
             label: 'Drafts',
-            icon: 'OrdersStatusIcon',
+            icon: 'DraftIcons',
           },
           {
             href: Routes.question.list,
-            label: 'Questions',
+            label: 'Quotations',
             icon: 'QuestionIcon',
           },
           {
@@ -114,7 +114,7 @@ export const siteSettings = {
         ],
       },
       {
-        href: "/",
+        href: "/reports",
         label: 'Reports',
         icon: 'ReviewIcon',
         children: [],
@@ -125,9 +125,9 @@ export const siteSettings = {
         icon: 'SettingsIcon',
         children: [
           {
-            href: Routes.settings,
+            href: Routes.businessettings,
             label: 'Business Settings',
-            icon: 'SettingsIcon',
+            icon: 'BusinesSettingIcon',
           },
           {
             href: Routes.settings,
