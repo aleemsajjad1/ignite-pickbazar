@@ -69,11 +69,7 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
       <div className="my-5 flex flex-wrap sm:my-8">
         <Description
           title={t('form:item-description')}
-          details={`${
-            initialValues
-              ? t('form:item-description-update')
-              : t('form:item-description-add')
-          } ${t('form:type-description-help-text')}`}
+          details={t('Add New Brand Description')}
           className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
         />
 
@@ -119,7 +115,7 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
         )}
 
         <Button>
-          {initialValues ? t('form:button-label-update-group') : t('Add Product')}
+          {initialValues ? t('form:button-label-update-group') : t('Add Brand')}
         </Button>
       </div>
     </form>

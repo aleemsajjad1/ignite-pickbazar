@@ -43,10 +43,10 @@ export const Routes = {
     ...routesFactory('unit'),
   },
   invoice: {
-    ...routesFactory('/invoice'),
+    ...routesFactory('invoice'),
   },
   draft: {
-    ...routesFactory('/drafts'),
+    ...routesFactory('drafts'),
   },
   reviews: {
     ...routesFactory('/reviews'),
@@ -76,7 +76,7 @@ export const Routes = {
     ...routesFactory('/orders'),
   },
   creditNotes: {
-    ...routesFactory('/creditNotes'),
+    ...routesFactory('creditNotes'),
   },
   orderStatus: {
     ...routesFactory('/order-status'),
@@ -106,7 +106,7 @@ export const Routes = {
     ...routesFactory('/refunds'),
   },
   question: {
-    ...routesFactory('/questions'),
+    ...routesFactory('questions'),
   },
 };
 

@@ -58,10 +58,10 @@ export default function Authors() {
 
           {locale === Config.defaultLanguage && (
             <LinkButton
-              href={`${Routes.author.create}`}
+              href={`${Routes.variant.create}`}
               className="md:ms-6 h-12 w-full md:w-auto"
             >
-              <span>+ {t('form:button-label-add-author')}</span>
+              <span>+ {t('Add Variant')}</span>
             </LinkButton>
           )}
         </div>

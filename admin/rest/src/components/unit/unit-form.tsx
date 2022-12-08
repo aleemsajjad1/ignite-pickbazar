@@ -15,6 +15,9 @@ import { Config } from '@/config';
 import TextArea from '@/components/ui/text-area';
 import { toast } from 'react-toastify';
 import { AddBrands } from '../../services/Service';
+import SelectInput from '../ui/select-input';
+import { unitDrop } from './unit-icon';
+import Label from '../ui/label';
 
 type BannerInput = {
   title: string;
@@ -69,11 +72,7 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
       <div className="my-5 flex flex-wrap sm:my-8">
         <Description
           title={t('form:item-description')}
-          details={`${
-            initialValues
-              ? t('form:item-description-update')
-              : t('form:item-description-add')
-          } ${t('form:type-description-help-text')}`}
+          details={t('Add New Unit Description')}
           className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
         />
 
@@ -85,17 +84,24 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
             variant="outline"
             className="mb-5"
           />
-          <TextArea
-            label={t('form:input-description')}
-            {...register('des')}
-            error={t(errors.des?.message!)}
+          <Input
+            label={t('Short Name')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
             variant="outline"
             className="mb-5"
           />
+          <div className="mb-5">
+            <Label>{t('Allow Decimal')}</Label>
+            <SelectInput
+              name="icon"
+              control={control}
+              options={unitDrop}
+              isClearable={true}
+            />
+          </div>
         </Card>
       </div>
-
-      
 
       <div className="mb-4 text-end">
         {initialValues && (

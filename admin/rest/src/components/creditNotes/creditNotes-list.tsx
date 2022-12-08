@@ -58,20 +58,12 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
 
   const columns = [
     {
-      title: "Date",
+      title: "Customer Name",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
       align: "center",
-      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
-    },
-    {
-      title: "Credit Note No.",
-      className: 'cursor-pointer',
-      dataIndex: 'name',
-      key: 'name',
-      align: "center",
-      render: (name: any) => <span className="whitespace-nowrap">12</span>,
+      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
     },
     {
       title: "Parent Sale",
@@ -81,14 +73,15 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       align: "center",
       render: (name: any) => <span className="whitespace-nowrap">$122</span>,
     },
+    
     {
-      title: "Customer Name",
+      title: "Credit Note No.",
       className: 'cursor-pointer',
       dataIndex: 'name',
       key: 'name',
       align: "center",
-      render: (name: any) => <span className="whitespace-nowrap">{name}</span>,
-    },
+      render: (name: any) => <span className="whitespace-nowrap">12</span>,
+    },   
     {
       title: "Location",
       className: 'cursor-pointer',
@@ -96,6 +89,14 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       key: 'name',
       align: "center",
       render: (name: any) => <span className="whitespace-nowrap">Pakistan</span>,
+    },
+    {
+      title: "Date",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
     },
     {
       title: "Total Amount",

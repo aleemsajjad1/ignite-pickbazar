@@ -81,11 +81,11 @@ export const siteSettings = {
           },
         ],
       },
-      {
-          href: Routes.dashboard,
-          label: 'Statistic',
-          icon: 'StatisticIcons',
-      },
+      // {
+      //     href: Routes.dashboard,
+      //     label: 'Statistic',
+      //     icon: 'StatisticIcons',
+      // },
       {
         href: "/sales",
         label: 'Sales',

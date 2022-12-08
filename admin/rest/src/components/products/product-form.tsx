@@ -52,7 +52,6 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
     console.log('valuesvalues', values);
 
     AddBrands(values).then((result) => {
-      console.log('result===', result);
       if (result.success) {
         toast.success(t('common:successfully-created'));
         Router.push(Routes.brands.list, undefined, {
@@ -66,14 +65,10 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="my-5 flex flex-wrap sm:my-8">
+      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
         <Description
           title={t('form:item-description')}
-          details={`${
-            initialValues
-              ? t('form:item-description-update')
-              : t('form:item-description-add')
-          } ${t('form:type-description-help-text')}`}
+          details={t('Add New Product Description')}
           className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
         />
 
@@ -94,17 +89,98 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
           />
         </Card>
       </div>
-
-      {/* <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
+      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
         <Description
-          title={t('Brand Image')}
-          details={t('Upload Brand Image')}
+          title={t('Price')}
           className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
         />
         <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="promotional_sliders" control={control} />
+          <Input
+            label={t('Price')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Discounted Product Price')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
         </Card>
-      </div> */}
+      </div>
+      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
+        <Description
+          title={t('Stock')}
+          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
+        />
+        <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Input
+            label={t('Stock Code')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Number Of Stock')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            type="number"
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Maximum Sales')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            type="number"
+            variant="outline"
+            className="mb-5"
+          />
+        </Card>
+      </div>
+      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
+        <Description
+          title={t('Brand')}
+          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
+        />
+        <Card className="w-full sm:w-8/12 md:w-2/3">
+          <Input
+            label={t('Brand')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Category')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Stock Code (SKU)')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+        </Card>
+      </div>
+
+      <div className="my-5 flex flex-wrap sm:my-8">
+        <Description
+          title={t('Upload Image')}
+          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
+        />
+        <Card className="w-full sm:w-8/12 md:w-2/3">
+          <FileInput name="image" control={control} multiple={false} />
+        </Card>
+      </div>
 
       <div className="mb-4 text-end">
         {initialValues && (
@@ -119,7 +195,9 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
         )}
 
         <Button>
-          {initialValues ? t('form:button-label-update-group') : t('Add Product')}
+          {initialValues
+            ? t('form:button-label-update-group')
+            : t('Add Product')}
         </Button>
       </div>
     </form>

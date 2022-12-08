@@ -1,39 +1,12 @@
-export const typeIconList = [
+export const unitDrop = [
     {
       value: 'FruitsVegetable',
-      label: 'Fruits and Vegetable',
+      label: 'Yes',
     },
     {
       value: 'FacialCare',
-      label: 'Facial Care',
+      label: 'No',
     },
-    {
-      value: 'Handbag',
-      label: 'Hand Bag',
-    },
-    {
-      value: 'DressIcon',
-      label: 'Dress Icon',
-    },
-    {
-      value: 'FurnitureIcon',
-      label: 'Furniture Icon',
-    },
-    {
-      value: 'BookIcon',
-      label: 'Book Icon',
-    },
-    {
-      value: 'MedicineIcon',
-      label: 'Medicine Icon',
-    },
-    {
-      value: 'Restaurant',
-      label: 'Restaurant',
-    },
-    {
-      value: 'Bakery',
-      label: 'Bakery',
-    },
+    
   ];
   

@@ -57,25 +57,7 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
   });
 
   const columns = [
-    {
-      title: "Date",
-      className: 'cursor-pointer',
-      dataIndex: 'name',
-      key: 'name',
-      align: alignLeft,
-      width:150,
-      onHeaderCell: () => onHeaderClick('name'),
-      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
-    },
-    {
-      title: "Invoice No.",
-      className: 'cursor-pointer',
-      dataIndex: 'name',
-      key: 'name',
-      width:120,
-      align: "center",
-      render: (name: any) => <span className="whitespace-nowrap">1200</span>,
-    },
+   
     {
       title: "Customer Name",
       className: 'cursor-pointer',
@@ -104,6 +86,25 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       align: alignLeft,
       width:120,
       render: (name: any) => <span className="whitespace-nowrap">Pakistan</span>,
+    },
+    {
+      title: "Date",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      width:150,
+      onHeaderCell: () => onHeaderClick('name'),
+      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
+    },
+    {
+      title: "Invoice No.",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      width:120,
+      align: "center",
+      render: (name: any) => <span className="whitespace-nowrap">1200</span>,
     },
     {
       title: "Payment Status",

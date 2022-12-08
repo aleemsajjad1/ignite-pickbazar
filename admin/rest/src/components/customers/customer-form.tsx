@@ -95,24 +95,38 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
 
         <Card className="w-full sm:w-8/12 md:w-2/3">
           <Input
-            label={t('form:input-label-Fname')}
+            label={t('Name')}
             {...register('fname')}
             error={t(errors.fname?.message!)}
             variant="outline"
             className="mb-5"
           />
           <Input
-            label={t('form:input-label-Lname')}
-            {...register('lname')}
-            error={t(errors.lname?.message!)}
-            variant="outline"
-            className="mb-5"
-          />
-
-          <Input
             label={t('form:input-label-email')}
             {...register('email')}
             type="email"
+            variant="outline"
+            className="mb-4"
+            error={t(errors.email?.message!)}
+          />
+           <Input
+            label={t('Registration Date')}
+            {...register('email')}
+            type="number"
+            variant="outline"
+            className="mb-4"
+            error={t(errors.email?.message!)}
+          />
+           <Input
+            label={t('Order')}
+            {...register('email')}
+            variant="outline"
+            className="mb-4"
+            error={t(errors.email?.message!)}
+          />
+          <Input
+            label={t('Spend')}
+            {...register('email')}
             variant="outline"
             className="mb-4"
             error={t(errors.email?.message!)}

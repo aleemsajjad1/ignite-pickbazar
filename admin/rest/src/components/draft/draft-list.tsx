@@ -57,22 +57,7 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
   });
 
   const columns = [
-    {
-      title: "Date",
-      className: 'cursor-pointer',
-      dataIndex: 'name',
-      key: 'name',
-      align: alignLeft,
-      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
-    },
-    {
-      title: "Reference No.",
-      className: 'cursor-pointer',
-      dataIndex: 'name',
-      key: 'name',
-      align: alignLeft,
-      render: (name: any) => <span className="whitespace-nowrap">12</span>,
-    },
+    
     {
       title: "Customer Name",
       className: 'cursor-pointer',
@@ -88,6 +73,22 @@ const TypeList = ({ listOfBrands, onSort, onOrder }: IProps) => {
       key: 'name',
       align: alignLeft,
       render: (name: any) => <span className="whitespace-nowrap">03xxxxxxxxx</span>,
+    },
+    {
+      title: "Date",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      render: (name: any) => <span className="whitespace-nowrap">12/12/2022</span>,
+    },
+    {
+      title: "Reference No.",
+      className: 'cursor-pointer',
+      dataIndex: 'name',
+      key: 'name',
+      align: alignLeft,
+      render: (name: any) => <span className="whitespace-nowrap">12</span>,
     },
     {
       title: "Location",

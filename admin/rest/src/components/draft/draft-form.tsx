@@ -69,17 +69,62 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
       <div className="my-5 flex flex-wrap sm:my-8">
         <Description
           title={t('form:item-description')}
-          details={`${
-            initialValues
-              ? t('form:item-description-update')
-              : t('form:item-description-add')
-          } ${t('form:type-description-help-text')}`}
+          details={t('Add New Draft Description')}
           className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
         />
 
         <Card className="w-full sm:w-8/12 md:w-2/3">
           <Input
             label={t('form:input-label-name')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Customer Contact')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+           <Input
+            label={t('Reference No.')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Date')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Location')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Total Items')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Added By')}
+            {...register('name')}
+            error={t(errors.name?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+          <Input
+            label={t('Total Ammount')}
             {...register('name')}
             error={t(errors.name?.message!)}
             variant="outline"
@@ -92,17 +137,6 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
             variant="outline"
             className="mb-5"
           />
-        </Card>
-      </div>
-
-      <div className="my-5 flex flex-wrap border-b border-dashed border-border-base pb-8 sm:my-8">
-        <Description
-          title={t('Brand Image')}
-          details={t('Upload Brand Image')}
-          className="w-full px-0 pb-5 sm:w-4/12 sm:py-8 sm:pe-4 md:w-1/3 md:pe-5"
-        />
-        <Card className="w-full sm:w-8/12 md:w-2/3">
-          <FileInput name="promotional_sliders" control={control} />
         </Card>
       </div>
 
